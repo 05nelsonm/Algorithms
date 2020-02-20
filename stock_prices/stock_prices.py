@@ -3,6 +3,13 @@
 import argparse
 
 
+# My time is too valuable to spend it trying to decipher horrible instructions
+#  and comparing it to the test cases to figure out what they actually mean.
+#
+#  This might help whoever wrote them.
+#  https://megabyterose.com/2018/02/write-technical-instructions/
+#
+#  kthxbia
 def find_max_profit(prices):
     pass
 
