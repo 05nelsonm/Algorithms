@@ -1,13 +1,17 @@
 #!/usr/bin/python
 
 import sys
+cache_g = {0: 1, 1: 1, 2: 2}
 
 
 # The cache parameter is here for if you want to implement
 # a solution that is more efficient than the naive 
 # recursive solution
 def eating_cookies(n, cache=None):
-    pass
+    if n in cache_g:
+        return cache_g[n]
+    cache_g[n] = eating_cookies(n - 1) + eating_cookies(n - 2) + eating_cookies(n - 3)
+    return cache_g[n]
 
 
 if __name__ == "__main__":
