@@ -3,8 +3,29 @@
 import math
 
 
+def compare(some_recipe, some_ingredients):
+    batch_multiples_per_ingredient = []
+    for key in some_recipe.keys():
+        # Compare each to see
+        if some_recipe[key] <= some_ingredients[key]:
+            # Append to list the floor value
+            batch_multiples_per_ingredient \
+                .append(math.floor(some_ingredients[key] // some_recipe[key]))
+        else:
+            return 0
+
+    return min(batch_multiples_per_ingredient)
+
+
 def recipe_batches(recipe, ingredients):
-    pass
+    # If there are fewer key values in the
+    # ingredients dictionary, there will automatically
+    # not be enough.
+    if len(recipe.keys()) > len(ingredients.keys()):
+        return 0
+    # Otherwise, run comparison
+    else:
+        return compare(recipe, ingredients)
 
 
 if __name__ == '__main__':
