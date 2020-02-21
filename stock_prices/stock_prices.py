@@ -3,15 +3,25 @@
 import argparse
 
 
-# My time is too valuable to spend it trying to decipher horrible instructions
-#  and comparing it to the test cases to figure out what they actually mean.
-#
-#  This might help whoever wrote them.
-#  https://megabyterose.com/2018/02/write-technical-instructions/
-#
-#  kthxbia
 def find_max_profit(prices):
-    pass
+    # Start at a super super low number as your base case to compare to
+    max_profit = -100000000000000000000000000000000000000000000000000000
+
+    # Outer loop for pegging it at the buy price before checking the rest against it
+    for index_a in range(0, len(prices)):
+
+        # Inner loop for comparing the remaining numbers with the start price
+        for index_b in range(index_a + 1, len(prices)):
+
+            # Get the difference between outer loop num and inner loop num
+            diff = prices[index_b] - prices[index_a]
+
+            # Check and store in outer most scoped variable
+            if diff > max_profit:
+                max_profit = diff
+
+    # Celebrate
+    return max_profit
 
 
 if __name__ == '__main__':
